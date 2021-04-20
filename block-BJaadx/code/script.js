@@ -12,16 +12,16 @@ document.body.children[5].children[0].innerText = "all about document";
 document.body.children[6].children[2];
 
 // 3. Log the number (using console.log) of children of all the `li` element inside the ul with class `topics`
-console.log(document.querySelectorAll("li").length);
+console.log(document.body.children[5].children.length);
 
 // 4. Select the first input using the `type` selector and store them in variable named `emailInput`
-let emailInput = document.querySelector(`input[type=email]`);
+let emailInput = document.querySelector(`input`);
 
 // 5. Select the ul element using class selector and store in `topics`
 let topics = document.querySelector(".topics");
 
 // 6. Select the first label element and store in `label`
-let label = emailInput.previousElementSibling;
+let label = document.querySelector('label');
 
 // 7. Select the input of type `checkbox` with the `id` selector and store in `inputCheckbox`
 let inputCheckbox = document.getElementById("remember");
@@ -54,7 +54,7 @@ console.log(`The total number of img element is ${document.querySelectorAll("img
 let allPElement = document.querySelectorAll("p");
 
 // 17. Select all the buttons and log the count of buttons.
-console.log(`Number of button = ${document.querySelectorAll(`input[type="submit"]`).length}`);
+console.log(`Number of button = ${document.querySelectorAll(`button`).length}`);
 
 // 18. Select all the `label` element and log the count.
 console.log(`Number of label elements = ${document.querySelectorAll("label").length}`)
