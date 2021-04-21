@@ -1,0 +1,160 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Variables */
+
+:root {
+    --primary: rgb(54,127,128);
+    --secondary: rgb(242,233,92);
+    --text-white: #fff;
+}
+/* Custom Styles */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    line-height: 1.5;
+    background-color: rgb(253,244,233);
+
+}
+
+.container {
+    max-width: 1300px;
+    margin: 1.5rem auto;
+    padding: 0 2rem;
+}
+
+
+
+/* Flex */
+
+.flex {
+    display: flex;
+}
+
+.jcb{
+    justify-content: space-between;
+}
+
+.aic {
+    align-items: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+.flex-30 {
+    flex: 0 1 31.5%;
+}
+
+.btn {
+    background-color: var(--primary);
+    color: var(--text-white);
+    border: 0;
+    outline: 0;
+    padding: .5rem .8rem;
+    font-size: .8rem;
+    border-radius: .3rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* General Styles */
+
+.text-center {
+    text-align: center;
+}
+.img {
+    max-width: 8rem;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+
+/* Header */
+
+.header {
+    background-color: var(--primary);
+    padding: 1.5rem 0;
+    color: var(--secondary);
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.book-section {
+    padding: 2rem;
+}
+
+.title {
+    margin: .5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.author {
+    margin-bottom: 1.2rem;
+    font-weight: 200;
+}
+
+.box {
+    margin: .5rem;
+    background-color: red;
+    padding: 1rem;
+    background-color: var(--text-white);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+}
