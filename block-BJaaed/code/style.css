@@ -111,7 +111,10 @@ body {
     cursor: pointer;
 }
 /* General Styles */
-
+ a {
+     text-decoration: none;
+     color: var(--text-white);
+ }
 .text-center {
     text-align: center;
 }
@@ -157,4 +160,8 @@ body {
     padding: 1rem;
     background-color: var(--text-white);
     box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+}
+
+.box:hover {
+    border: 4px solid var(--primary);
 }
