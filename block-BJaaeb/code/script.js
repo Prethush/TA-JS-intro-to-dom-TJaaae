@@ -6,12 +6,13 @@ default value to be "text" and return the input element inside label. (create it
 */
 
 // Your code goes here
-function createInputElm(label, type = "text") {
-  let label1 = document.createElement("label");
+function createInputElm(labelMessage, type = "text") {
+  let label = document.createElement("label");
   let input = document.createElement("input");
   input.type = type;
-  label1.append(label, input);
-  return label1;
+  label.innerText = labelMessage; 
+  label.append(input);
+  return label;
 }
 
 // TEST
@@ -21,7 +22,10 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 // 2. Do the same thing as above using string literal like `<h1>Hello</h1>`
 
 // Your code goes here
-
+function createInputElm(labelMessage, input = "text") {
+  let html = `<label>${labelMessage} <input type = "${input}"></label>`
+  return html;
+}
 // TEST
 createInputElm('Your name'); //<label>Your name: <input type="text"></label>
 createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></label>
@@ -30,15 +34,12 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 // the html for the link like <ul> <li>Mango</li>  <li>Apple</li>  <li>Banana</li> </ul>
 // Your code goes here
 
-function createList(arr) {
-  let ul = document.createElement("ul");
-  let li = [];
-  for(let i = 0; i < arr.length; i++) {
-     li[i] = document.createElement("li");
-    li[i].append(arr[i]);
-  }
-  li.forEach((el) => ul.append(el));
-  return ul;
+function createList(data = []) {
+  let html = `<ul>
+  ${data.map((elm) => `<li>${elm}</li>`).join("")}
+
+  </ul>`;
+  return html;
 }
 // TEST
 createList(['ALABAMA', 'ALASKA', 'HAWAII', 'KENTUCKY']);
@@ -59,27 +60,19 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 
 // Your code goes here
 
-function createTodoList(arr) {
-  let ul =[], p = [], li = [], input = [], span = [];
-  for(let i = 0; i < arr.length; i++) {
-    ul[i] = document.createElement("ul");
-    li[i] = document.createElement("li");
-    p[i] = document.createElement("p");
-    input[i] = document.createElement("input");
-    span[i] = document.createElement("span");
-    p[i].innerText = arr[i].name;
-    span[i].innerText = "X";
-    input[i].type = "checkbox";
-    input[i].name = "";
-    input[i].id = "";
-    input[i].checked = arr[i].isDone;
-    li[i].append(p[i], input[i], span[i]);
-    ul[i].append(li[i]);
-  } 
+function createTodoList(data = []) {
+  
+ let html = `<ul>
+ ${data.map((elm) => `
+   <li> <p>${elm.name}<p>
+   <input type="checkbox" ${elm.isDone ? "checked" : ""} name="" id="">
+   <span>X<span>
+   </li>`
+   ).join("")}
+  <ul>`
  
- for(let i = 0;  i < ul.length; i++) {
-   console.log(ul[i]);
- }
+ 
+ return html;
 }
 // TEST
 createTodoList([
