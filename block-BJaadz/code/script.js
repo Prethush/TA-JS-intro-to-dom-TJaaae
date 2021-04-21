@@ -42,13 +42,13 @@ allHrsArray.forEach((hr) => hr.style.borderRadius = "5px");
 heading.style.fontSize = "3rem";
 
 // Change the border of hr with class 'image' to `2px solid purple`.
-allHrsArray.filter((hr) => hr.className === "image").forEach((hr) => hr.style.border = "2px solid purple");
+document.querySelectorAll("hr.image").forEach((hr) => hr.style.border = "2px solid purple");
 
 // Hide the box number 17 (last box).
 let boxSeventeen = document.querySelector(".seventeen");
-boxSeventeen.hidden = "true";
+boxSeventeen.style.display = "none";
 // Change the border of all the hr element from solid to dashed type
-allHrsArray.forEach((hr) => hr.style.border = "1px dashed tomato")
+allHrsArray.forEach((hr) => hr.style.borderStyle = "dashed")
 
 // Create a pragraph element and store it in variable named 'para' using `createElement`
 let para = document.createElement("p");
@@ -57,13 +57,12 @@ let para = document.createElement("p");
 para.innerText = "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure.";
 
 // Remove all the elements from box 1
-let box1 = document.querySelector(".archive").children;
-let boxArray = Array.from(box1);
-boxArray.forEach((element) => element.remove());
+let box1 = document.querySelector(".archive");
+box1.innerHTML = "";
 
 // Replace all the elements inside box 1 with the para (you created above)
-let divBoxOne = document.querySelector(".archive");
-divBoxOne.append(para);
+
+box1.append(para);
 /* Walking the DOM
 Do the following after selecting box 16 and storing in variable named box16
 
@@ -160,9 +159,7 @@ imgElm.src=`https://images.unsplash.com/photo-1592500595497-d1f52a40b207?ixlib=r
 let box7 = document.querySelector(".seven");
 
 // Remove all the elements form box seven
-let box7Array = Array.from(box7.children);
-box7Array.forEach((box) => box.remove());
-
+box7.innerHTML = "";
 // Append the imgElm to the box no 7
 box7.append(imgElm);
 
