@@ -53,7 +53,7 @@ table {
 
 :root {
   --primary: rgb(211,211,211);
-  --secondary: #000;
+  --secondary: #fff;
   --tertiary: rgb(249,63,54);
 }
 
@@ -67,13 +67,13 @@ html {
 
 body {
   background-color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+   
 }
-
-
 
 /* Flex */
 
@@ -93,207 +93,83 @@ body {
 /* Clock */
 
 .clock {
-  position: relative;
-  width: 350px;
-  height: 350px;
-  background-color: #fff;
+  width: 20rem;
+  height: 20rem;
+  background-color: var(--secondary);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
   border-radius: 50%;
-  border: 1.5rem solid #303030;
+  position: relative;
+  border: .5rem solid #000;
 }
 
-.clock::before {
+.clock .number {
+  --rotation : 0;
   position: absolute;
-  content: "";
-  width: 359px;
-  height: 359px;
-  border: .5rem solid #202020;
-  border-radius: 50%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  transform: rotate(var(--rotation));
 }
+
+.clock .number1 { --rotation: 30deg;}
+.clock .number2 { --rotation: 60deg;} 
+.clock .number3 { --rotation: 90deg;} 
+.clock .number4 { --rotation: 120deg;} 
+.clock .number5 { --rotation: 150deg;} 
+.clock .number6 { --rotation: 180deg;} 
+.clock .number7 { --rotation: 210deg;} 
+.clock .number8 { --rotation: 240deg;} 
+.clock .number9 { --rotation: 270deg;} 
+.clock .number10 { --rotation: 300deg;} 
+.clock .number11 { --rotation: 330deg;} 
+
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  
+  
+  bottom: 50%;
+  left: 50%;
+  border-top-left-radius: .6rem;
+  border-top-right-radius: .6rem;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
 
 .clock::after {
-  position: absolute;
   content: "";
-  height: 200px;
-  width: 200px;
-  background: #59c3ff;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.center-nut, .center-nut2 {
   position: absolute;
+  background-color: #000;
+  z-index: 11;
+  width: 1rem;
+  height: 1rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.center-nut {
-  height: 20px;
-  width: 20px;
-  background: #262626;
-  z-index: 2;
   border-radius: 50%;
 }
+.clock .hand.second {
 
-.center-nut2 {
-  height: 14px;
-  width: 14px;
-  background: red;
-  z-index: 6;
-  border-radius: 50%;
+  width: .1rem;
+  height: 43%;
+  background-color: red;
+}
+
+.clock .hand.minute {
+
+  width: .5rem;
+  height: 40%;
+  background-color: #000;
+}
+
+.clock .hand.hour {
+
+  width: .6rem;
+  height: 35%;
+  background-color: #000;
 }
 
 
-.indicator div {
-  position: absolute;
-  width: 2px;
-  height: 5px;
-  background: #404040;
-}
-
-.indicator div:nth-child(1) {
-  transform: rotate(30deg) translateY(-133px);
-}
-
-.indicator div:nth-child(2) {
-  transform: rotate(60deg) translateY(-133px);
-}
-
-.indicator div:nth-child(3) {
-  transform: rotate(90deg) translateY(-133px);
-  background: red;
-}
-
-.indicator div:nth-child(4) {
-  transform: rotate(120deg) translateY(-133px);
-}
-
-.indicator div:nth-child(5) {
-  transform: rotate(150deg) translateY(-133px);
-}
-
-.indicator div:nth-child(6) {
-  transform: rotate(180deg) translateY(-133px);
-  background: red;
-}
-
-.indicator div:nth-child(7) {
-  transform: rotate(210deg) translateY(-133px);
-}
-
-.indicator div:nth-child(8) {
-  transform: rotate(240deg) translateY(-133px);
-}
-
-.indicator div:nth-child(9) {
-  transform: rotate(270deg) translateY(-133px);
-  background: red;
-}
-
-.indicator div:nth-child(10) {
-  transform: rotate(300deg) translateY(-133px);
-}
-
-.indicator div:nth-child(11) {
-  transform: rotate(330deg) translateY(-133px);
-}
-
-.indicator div:nth-child(12) {
-  transform: rotate(360deg) translateY(-133px);
-  background: red;
-}
-
-.sec-hand {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  z-index: 5;
-  animation: sec-hand 60s liner infinite;
-}
-
-.sec-hand::before {
-  position: absolute;
-  content: "";
-  height: 150px;
-  width: 3px;
-  left: -1px;
-  top: -25px;
-  background: red;
-}
-
-.sec-hand::after {
-  position: absolute;
-  content: "";
-  height: 45px;
-  width: 7px;
-  left: -3px;
-  top: -55px;
-  background: red;
-}
-
-.min-hand {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  z-index: 4;
-  animation: min-hand 3600s liner infinite;
-}
-
-.min-hand::before {
-  position: absolute;
-  content: "";
-  height: 4px;
-  width: 1px;
-  left: -3px;
-  top: -95px;
-  border-left: 3px solid transparent;
-  border-right: 3px solid transparent; 
-  border-bottom: 70px solid #303030;
-}
-
-.min-hand::after {
-  position: absolute;
-  content: "";
-  height: 1px;
-  width: 7px;
-  left: -3px;
-  top: -25px;
-  background: red;
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent; 
-  border-top: 25px solid #303030;
-}
-
-.hr-hand {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  z-index: 3;
-  animation: hr-hand 43200s liner infinite;
-}
-
-.hr-hand::before {
-  position: absolute;
-  content: "";
-  height: 4px;
-  width: 1px;
-  left: -3px;
-  top: -75px;
-  border-left: 3px solid transparent;
-  border-right: 3px solid transparent; 
-  border-bottom: 55px solid #303030;
-}
-
-.hr-hand::after {
-  position: absolute;
-  content: "";
-  height: 1px;
-  width: 7px;
-  left: -3px;
-  top: -25px;
-  background: red;
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent; 
-  border-top: 20px solid #303030;
-}

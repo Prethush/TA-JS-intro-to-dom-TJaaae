@@ -1,16 +1,22 @@
+setInterval(setClock, 1000);
 
-function abc() {
-    let time = new Date();
-    let sec = time.getSeconds() / 60 * 360;
-    
-    let min = time.getMinutes() / 60 * 360 + time.getSeconds() / 60 * 6;
-    let hr = time.getHours() / 12 * 360 + time.getMinutes() / 60 * 30;
-    
-    animation = [
-        `@keyframes sec-hand{from{trnsform: rotate(${sec}deg); }to{transform: rotate(${sec + 360})deg }}`,
-        `@keyframes min-hand{from{trnsform: rotate(${min}deg); }to{transform: rotate(${min + 360})deg }}`,
-        `@keyframes hr-hand{from{trnsform: rotate(${hr}deg); }to{transform: rotate(${hr + 360})deg }}`,
-    ].join("");
 
-    document.querySelector("#clock-animate").innerHTML = animation;
+const hourHand = document.querySelector("[data-hour-hand");
+const minuteHand = document.querySelector("[data-minute-hand]");
+const secondHand = document.querySelector("[data-second-hand]");
+
+function setClock() {
+    let currentDate = new Date();
+    const secondsRatio = currentDate.getSeconds() / 60;
+    const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60;
+    const hoursRatio = (minutesRatio + currentDate.getHours()) / 12;
+    setRotation(secondHand, secondsRatio);
+    setRotation(minuteHand, minutesRatio);
+    setRotation(hourHand, hoursRatio);
 }
+
+function setRotation(element, rotationRatio) {
+    element.style.setProperty('--rotation', rotationRatio * 360);
+}
+
+setClock();
