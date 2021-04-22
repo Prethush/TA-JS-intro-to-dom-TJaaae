@@ -1,0 +1,173 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Custom Styles */
+
+/* Variables */
+
+:root {
+  --primary: rgb(65,116,213);
+  --secondary: rgb(244,245,249);
+  --tertiary: rgb(221, 225, 233);
+  --text-color: #272727;
+  --text-white: #fff;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--secondary);
+}
+
+/* Container */
+
+.container {
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+
+/* Flex */
+
+.flex {
+  display: flex;
+}
+
+.jcb {
+  justify-content: space-between;
+}
+
+.aic {
+  align-items: center;
+}
+
+.column {
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex-30 {
+  flex: 0 1 29%;
+}
+
+/* General Styles */
+
+a {
+  text-decoration: none;
+}
+
+.padding {
+  padding: 2.5rem 0;
+}
+.img {
+  max-width: 6rem;
+  max-height: 6rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid lightgreen;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  background-color: var(--tertiary);
+  display: block;
+  text-align: center;
+  padding: .3rem 0;
+  font-weight: 500;
+}
+/* Header */ 
+
+.header {
+  padding: 2rem;
+  background-color: var(--primary);
+}
+
+.heading {
+  font-size: 1.8rem;
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.heading i {
+  color: yellow;
+  margin-right: .3rem;
+}
+
+/* Box Section */
+
+.box {
+  background-color: var(--text-white);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 7px rgba(0, 0, 0, .5);
+  border-radius: .5rem;
+}
+
+.title {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.description {
+  text-align: center;
+  margin: .7rem 0;
+  font-size: 1.1rem;
+}
+
