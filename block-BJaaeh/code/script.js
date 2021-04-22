@@ -5,6 +5,11 @@ const hourHand = document.querySelector("[data-hour-hand");
 const minuteHand = document.querySelector("[data-minute-hand]");
 const secondHand = document.querySelector("[data-second-hand]");
 
+let numbers = document.querySelectorAll(".number");
+numbers.forEach((number) => {
+     number.style.fontSize = "20px";
+     number.style.fontWeight = "900";
+    });
 function setClock() {
     let currentDate = new Date();
     const secondsRatio = currentDate.getSeconds() / 60;
